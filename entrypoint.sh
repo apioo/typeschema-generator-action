@@ -1,4 +1,9 @@
 #!/bin/sh -l
+if [ $GITHUB_REF_TYPE == 'tag' ]
+then
+  echo 'Skip generation for tag'
+  exit
+fi
 rm $2/*
 php /usr/src/typeschema/vendor/psx/schema/bin/schema schema:parse "$1" "$2" --format="$3" --config="$4"
 git config --global user.name "TypeSchema-Bot";
