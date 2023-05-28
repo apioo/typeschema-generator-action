@@ -1,0 +1,1 @@
+# typeschema-generator-action
