@@ -5,11 +5,9 @@ inputs:
   format:
     description: 'The target language, possible values are: csharp, go, java, php, python, ruby, rust, typescript or visualbasic'
     required: true
-    default: 'java'
   config:
     description: 'The generator config where you can i.e. configure a namespace for the generated code'
     required: false
-    default: 'namespace=org.typeschema.generator'
   source:
     description: 'Location of the TypeSchema source, this can be either a local file at your repository or a remote source like an `https://` url or a TypeHub source i.e. `typehub://apioo:developer@1.0.1`'
     required: true
@@ -17,7 +15,6 @@ inputs:
   output:
     description: 'The output directory where the generated files are placed. NOTE the action will delete all files from this directory before code generation to have a clean state and to remove files which are no longer needed'
     required: true
-    default: './output'
   token:
     description: 'Github access token to be able to commit the files to your repository'
     required: false
