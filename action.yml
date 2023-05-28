@@ -1,6 +1,9 @@
 name: 'TypeSchema Code Generator'
 description: 'This action can automatically generate code based on a TypeSchema specification'
 author: 'Apioo'
+branding:
+  icon: archive
+  color: blue
 inputs:
   format:
     description: 'The target language, possible values are: csharp, go, java, php, python, ruby, rust, typescript or visualbasic'
