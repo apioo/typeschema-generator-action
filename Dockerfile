@@ -26,9 +26,10 @@ RUN echo "${COMPOSER_SHA256} */usr/bin/composer" | sha256sum -c -
 RUN chmod +x /usr/bin/composer
 
 # run composer
-COPY composer.json composer.json
-COPY composer.lock composer.lock
-RUN composer install
+MKDIR /usr/src/typeschema
+COPY composer.json /usr/src/typeschema/composer.json
+COPY composer.lock /usr/src/typeschema/composer.lock
+RUN cd /usr/src/typeschema && composer install
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
