@@ -26,7 +26,7 @@ RUN echo "${COMPOSER_SHA256} */usr/bin/composer" | sha256sum -c -
 RUN chmod +x /usr/bin/composer
 
 # run composer
-MKDIR /usr/src/typeschema
+RUN mkdir /usr/src/typeschema
 COPY composer.json /usr/src/typeschema/composer.json
 COPY composer.lock /usr/src/typeschema/composer.lock
 RUN cd /usr/src/typeschema && composer install
