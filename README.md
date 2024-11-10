@@ -9,10 +9,9 @@ This action can automatically generate code based on a [TypeSchema](https://type
 **Required** The target language, possible values are: `csharp`, `go`, `java`, `php`, `python`, `ruby`, `rust`,
 `typescript` or `visualbasic`.
 
-## `config`
+## `namespace`
 
-The generator config where you can configure a namespace for the generated code i.e.
-`namespace=org.typeschema.generator` for Java.
+Optional a namespace for the generated code i.e. `org.typeschema.generator` for Java.
 
 ## `source`
 
@@ -30,7 +29,7 @@ this directory before code generation to have a clean state and to remove files 
 uses: apioo/typeschema-generator-action@v1
 with:
   format: 'java'
-  config: 'namespace=org.typeschema.generator'
+  namespace: 'org.typeschema.generator'
   source: './typeschema.json'
   output: './output'
 ```

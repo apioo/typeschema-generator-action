@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.3-cli
 MAINTAINER Christoph Kappestein <christoph.kappestein@apioo.de>
 LABEL description="TypeSchema Code Generator"
 
@@ -29,7 +29,9 @@ RUN chmod +x /usr/bin/composer
 RUN mkdir /usr/src/typeschema
 COPY composer.json /usr/src/typeschema/composer.json
 COPY composer.lock /usr/src/typeschema/composer.lock
+COPY generator /usr/src/typeschema/generator
 RUN cd /usr/src/typeschema && composer install
+RUN chmod +x /usr/src/typeschema/generator
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

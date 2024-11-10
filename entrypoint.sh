@@ -5,7 +5,7 @@ then
   exit
 fi
 rm $2/*
-php /usr/src/typeschema/vendor/psx/schema/bin/schema schema:parse "$1" "$2" --format="$3" --config="$4"
+php /usr/src/typeschema/generator schema:parse "$1" "$2" --format="$3" --config="namespace=$4"
 git config --global user.name "TypeSchema-Bot";
 git config --global user.email "bot@typeschema.org";
 git config --global --add safe.directory /github/workspace

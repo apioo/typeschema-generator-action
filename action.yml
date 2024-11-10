@@ -8,8 +8,8 @@ inputs:
   format:
     description: 'The target language, possible values are: csharp, go, java, php, python, ruby, rust, typescript or visualbasic'
     required: true
-  config:
-    description: 'The generator config where you can i.e. configure a namespace for the generated code'
+  namespace:
+    description: 'Optional a namespace for the generated code'
     required: false
   source:
     description: 'Location of the TypeSchema source, this can be either a local file at your repository or a remote source like an `https://` url or a TypeHub source i.e. `typehub://apioo:developer@1.0.1`'
@@ -33,7 +33,7 @@ runs:
     - ${{ inputs.source }}
     - ${{ inputs.output }}
     - ${{ inputs.format }}
-    - ${{ inputs.config }}
+    - ${{ inputs.namespace }}
   env:
     GITHUB_TOKEN: ${{ inputs.token }}
     GITHUB_REPOSITORY: ${{ inputs.repository }}
